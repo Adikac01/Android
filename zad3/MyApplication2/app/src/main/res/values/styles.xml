@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name = "buttonsRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name = "numButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_margin">0.25dp</item>
+        <item name="android:layout_weight">0.25</item>
+        <item name="android:onClick">numberEvent</item>
+        <item name="android:textSize">65sp</item>
+    </style>
+    <style name = "opButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:layout_weight">0.25</item>
+        <item name="android:onClick">operatorEvent</item>
+        <item name="android:textSize">65sp</item>
+    </style>
+</resources>
