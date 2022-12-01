@@ -1,50 +1,43 @@
 package com.example.zadanie5
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.zadanie5.Cart.CartFragment
+import com.example.zadanie5.Cart.CartViewModel
+import com.example.zadanie5.Products.*
 import com.example.zadanie5.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), ProductClickListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var productViewModel: ProductViewModel
+    private lateinit var cartViewModel: CartViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        var productsList = mutableListOf(
-            ProductItem("Klawiatura", "Jakas klawiatura"),
-            ProductItem("Myszka", "Jakas myszka"),
-            ProductItem("Laptop", "Jakis laptop"),
-            ProductItem("Mikrofon", "Jakis dobry mikrofon")
-        )
-
-        productViewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
-        productViewModel.productItems.value = productsList
-        setRecyclerView()
-    }
-
-    private fun setRecyclerView()
-    {
-        val mainActivity = this
-        productViewModel.productItems.observe(this){
-            binding.productsRecyclerView.apply {
-                layoutManager = LinearLayoutManager(applicationContext)
-                adapter = ProductsAdapter(it, mainActivity)
+        cartViewModel = ViewModelProvider(this).get(CartViewModel::class.java)
+        loadFragment(ProductFragment())
+        binding.bottomNavigationView.setOnItemSelectedListener {
+            when(it.itemId) {
+                R.id.miProducts -> {
+                    loadFragment(ProductFragment())
+                }
+                R.id.miCart -> {
+                    loadFragment(CartFragment())
+                }
             }
+            true
         }
     }
 
-    override fun displayDescription(productItem: ProductItem) {
-        val desc = productItem.desc
-        Intent(this,DescriptionActivity::class.java).also{
-            it.putExtra("EXTRA_DESC", desc)
-            startActivity(it)
-        }
+
+    private  fun loadFragment(fragment: Fragment){
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.flFragment,fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }
