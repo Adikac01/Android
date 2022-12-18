@@ -4,9 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.zadanie5.Cart.CartFragment
-import com.example.zadanie5.Cart.CartViewModel
-import com.example.zadanie5.Products.*
+import com.example.zadanie5.Fragments.CartFragment
+import com.example.zadanie5.ViewModels.CartViewModel
+import com.example.zadanie5.Fragments.ProductFragment
 import com.example.zadanie5.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
