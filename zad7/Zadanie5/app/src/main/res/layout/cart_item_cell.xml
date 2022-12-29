@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/productCellContainer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cartProductName"
+            android:text="placeholder"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_gravity="center"
+            android:id="@+id/itemsInCart"
+            android:paddingRight="10dp"/>
+
+        <ImageButton
+            android:id="@+id/removeBtn"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/remove_shopping_cart_24"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:contentDescription="Shop cart"
+            android:backgroundTint="@android:color/transparent"
+            />
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
