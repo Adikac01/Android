@@ -7,3 +7,4 @@ zad 5 - 4,5
 zad 6 - 4,0 (tydzień opóźnienia)
 zad 7 - 4,0 (2 tygodnie opóźnienia)
 zad 8 - 3,5 (tydzień opóźnienia)
+zad 9 - 3,5 (tydzień opóźnienia)
