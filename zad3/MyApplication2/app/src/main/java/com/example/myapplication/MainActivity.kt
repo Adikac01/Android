@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
                    binding.res.append(view.text)
                }
                canAddDecimal = false
+               canAddOperation = false
            }
             else {
                binding.res.append(view.text)
