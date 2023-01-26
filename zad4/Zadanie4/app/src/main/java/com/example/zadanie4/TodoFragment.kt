@@ -27,7 +27,7 @@ class TodoFragment : Fragment(), TaskItemClickListener{
         val activity = requireActivity()
         taskViewModel = ViewModelProvider(activity).get(TaskViewModel::class.java)
         binding.newTaskBtn.setOnClickListener{
-            NewTaskSheet(null).show(parentFragmentManager,"newTaskTag")
+            NewTaskSheet(null, requireContext()).show(parentFragmentManager,"newTaskTag")
         }
         setRecycleView()
     }
